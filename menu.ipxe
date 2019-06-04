@@ -88,8 +88,8 @@ sanboot ${root-path} || goto failed
 goto start
 
 :esxi
-echo Booting ESXi from iSCSI for ${initiator-iqn}
-set root-path ${base-iscsi}:${hostname}.ESXi
+echo Booting ESXi from iSCSI for iqn.2000-01.com.synology:ipxe.ESXI
+set root-path iscsi:10.10.10.250:::1:iqn.2000-01.com.synology:ipxe.ESXI
 set keep-san 1
 sanboot ${root-path} || goto failed
 goto start
